@@ -29,37 +29,33 @@ pub fn build_social_sentiment_table(file_path: &str) -> HashMap<String, f64> {
 }
 
 pub fn get_social_sentiment_score(
-    // Path to the review file
     review_file: &str,
-    // HashMap containing the sentiment scores
-    sentiment_table: &HashMap<String, f64>,
-) -> f64 {
-    // Initialize the total score to 0.0
+    sentiment_table: &HashMap<String, f64>,) 
+    -> f64 
+    {
+    // Calculate the sentiment score for the review file
     let mut total_score = 0.0;
-    // Read the review file line by line
+    // Print the header for the output
+    println!("[word: current_score, accumulated_score]");
+    // Read the review file and calculate the score
     if let Ok(contents) = fs::read_to_string(review_file) {
         // Split the contents into words and process each word
         for word in contents.split_whitespace() {
-            // Clean the word by converting to lowercase and trimming non-alphabetic characters
+            // Clean the word by removing non-alphabetic characters and converting to lowercase
             let cleaned = word.to_lowercase().trim_matches(|c: char| !c.is_alphabetic()).to_string();
             // Check if the cleaned word exists in the sentiment table
             if let Some(score) = sentiment_table.get(&cleaned) {
-                // If found, add the score to the total score
                 total_score += score;
-                // Print the word and its score
-                println!("[{}: {:.2}, {:.2}]", cleaned, score, total_score);
-            } else {
-                // If not found, print the word and its score
-                println!("[{}: not found, {:.2}]", cleaned, total_score);
+                println!("{}: {:.2}, {:.2}", cleaned, score, total_score);
             }
         }
     } else {
-        // If the review file cannot be read, print an error message
         eprintln!("Failed to read review file: {}", review_file);
     }
-    // Return the total score
+
     total_score
 }
+
 
 pub fn get_star_rating(score: f64) -> u8 {
     // Determine the star rating based on the score
