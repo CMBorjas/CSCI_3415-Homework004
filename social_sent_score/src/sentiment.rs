@@ -44,15 +44,11 @@ pub fn build_social_sentiment_table(file_path: &str) -> HashMap<String, f64> {
     sentiment_table
 }
 //----------------------------------------------------------------------------
-// function to get the sentiment score for the reviewing file
-pub fn get_social_sentiment_score(
-    review_file: &str,
-    sentiment_table: &HashMap<String, f64>,) 
-    -> f64 
-    // Function takes pointer to file and hashmap pointer, then returns a floating point 64 bit number
-    {
+// Function to get the sentiment score for the reviewing file
+// Function takes pointer to file and hashmap pointer, then returns a floating point 64 bit number
+pub fn get_social_sentiment_score(review_file: &str,sentiment_table: &HashMap<String, f64>,) -> f64 {
     
-        // Calculate the sentiment score for the review file
+    // Calculate the sentiment score for the review file
     let mut total_score = 0.0;
     
     // Print the header for the output
@@ -69,9 +65,10 @@ pub fn get_social_sentiment_score(
     
             // Check if the cleaned word exists in the sentiment table
             if let Some(score) = sentiment_table.get(&cleaned) {
+                
                 // Binary operator 
                 total_score += score;
-
+                
                 // Print the word and its score
                 println!("{}: {:.2}, {:.2}", cleaned, score, total_score);
             }
