@@ -2,6 +2,7 @@
 // https://doc.rust-lang.org/std/collections/struct.HashMap.html
 use std::collections::HashMap;
 use std::fs;
+
 //----------------------------------------------------------------------------
 // function uses a file and a pointer to build a hashmap
 // the hashmap uses string and floating point numbers 64 bit
