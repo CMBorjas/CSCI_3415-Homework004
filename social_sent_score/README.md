@@ -112,3 +112,28 @@ REPL and local folder includes:
 - No libraries outside of Rust's standard library were used.
 - The program prioritizes correctness, memory safety, and idiomatic Rust style.
 - Execution has been tested successfully on Repl.it and locally using Cargo.
+
+---
+
+## Homework 4 Report
+
+### Abstract
+Rust is a systems programming language focused on safety, concurrency, and performance. Its unique feature is the ownership model, which guarantees memory safety without needing a garbage collector. This project leverages Rust to build a reliable command-line tool for sentiment analysis.
+
+### Approach
+1. **CSV Parsing**: The application reads the `socialsent.csv` dataset line-by-line using `std::fs` and populates a `HashMap` mapping words to their floating-point sentiment scores.
+2. **Scoring**: It reads the input review text file, splits it by whitespace, cleans punctuation, and matches words against the `HashMap` in `O(1)` time. It maintains a running total of the score.
+3. **Star Rating**: A multi-way selection using Rust's `match` construct assigns a 1 to 5-star rating based on the accumulated score thresholds.
+
+### New Things Learned
+- **Ownership & Borrowing**: Passing variables as references (e.g., `&HashMap`) to prevent the function from taking ownership and moving the variable out of scope.
+- **HashMap**: Initializing, mutating, and retrieving items using the `std::collections::HashMap` standard library.
+- **CLI Handling**: Capturing command-line arguments dynamically using `std::env::args`.
+
+### Likes/Dislikes of Rust
+**Likes:**
+- The compiler acts like a strict but helpful tutor. Error messages are incredibly detailed and often suggest the exact fix.
+- Pattern matching (`match`) is elegant and safer than standard `switch` statements.
+
+**Dislikes:**
+- The steep learning curve associated with lifetimes and the borrow checker. Strings in Rust (`String` vs `&str`) are significantly more complex than in Python or Java.
