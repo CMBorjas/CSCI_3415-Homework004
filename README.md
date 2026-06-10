@@ -5,6 +5,13 @@
 
 This repository contains the deliverables for Homework 4.
 
+## Tech Stack
+- **Rust**: Core application language
+- **TypeScript**: Web port implementation
+- **Next.js**: Framework for the web showcase
+- **Tailwind CSS**: Styling for the web interface
+- **Data Parsing**: Core logic for CSV dictionary mapping
+
 ## Contents
 
 - **`social_sent_score/`**: Contains the Rust implementation of the Social Sentiment Score Analyzer. It includes the source code (`src/`), data files (`data/`), and its own detailed `README.md` with instructions on how to build and run the program.
@@ -26,6 +33,11 @@ cargo run -- data/review.txt
 
 For more detailed information, please refer to the [`README.md` inside the `social_sent_score/` directory](./social_sent_score/README.md).
 
-## Website integration 
+## Website Integration
 
+This project has been integrated into a web-based portfolio ([ResumeWebsite](https://github.com/CMBorjas/ResumeWebsite)). The original Rust logic was carefully ported to TypeScript, allowing it to run natively within a Next.js application without a server backend.
 
+You can view the fully interactive showcase in the `social-sent-score` page within the portfolio, which features:
+- File upload functionality for `.txt` files.
+- Live, client-side data parsing from the Stanford SocialSent dataset.
+- A cyberpunk-styled interface crafted with Tailwind CSS that displays real-time score accumulation and star ratings.
