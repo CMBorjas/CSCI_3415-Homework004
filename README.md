@@ -3,6 +3,10 @@
 **Student:** Christian Mandujano Borjas  
 **Course:** CSCI 3415
 
+## Live demo
+
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen.svg)](https://cmborjas.github.io/ResumeWebsite/projects/social-sent-score)
+
 This repository contains the deliverables for Homework 4.
 
 ## Tech Stack
