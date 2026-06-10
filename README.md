@@ -21,9 +21,18 @@ This repository contains the deliverables for Homework 4.
 - **`social_sent_score/`**: Contains the Rust implementation of the Social Sentiment Score Analyzer. It includes the source code (`src/`), data files (`data/`), and its own detailed `README.md` with instructions on how to build and run the program.
 - **`Homework 4.docx`**: The original homework assignment document containing instructions and requirements.
 
+## Resume Highlights & Features
+
+This repository is an excellent demonstration of full-stack problem-solving, bridging systems programming with modern web development. Key highlights include:
+
+- **Rust Systems Engineering**: Designed a memory-safe, high-performance CLI tool leveraging Rust's strict type system and ownership model.
+- **Efficient Data Parsing**: Built custom file I/O operations to parse and load the 90KB+ Stanford SocialSent CSV dataset into a rapid-access `HashMap` for `O(1)` time-complexity word lookups.
+- **Web Porting & Serverless Architecture**: Successfully migrated the core algorithm to TypeScript, transforming a localized CLI tool into a globally accessible, serverless Next.js web application.
+- **Modern UI/UX Implementation**: Developed a responsive, interactive user interface utilizing React hooks, Framer Motion animations, and Tailwind CSS to craft a premium, cyberpunk-themed user experience.
+
 ## Overview
 
-The primary project for this homework is a sentiment analysis tool written in Rust. It reads word sentiment scores from a CSV file (derived from Stanford SocialSent) and analyzes the sentiment of a given review text file. The final output includes the total sentiment score and a corresponding star rating (1–5 stars) based on the accumulated score.
+The primary project for this homework is a sentiment analysis tool originally written in Rust. It reads word sentiment scores from a CSV file (derived from Stanford SocialSent) and analyzes the sentiment of a given review text file. The final output includes the total sentiment score and a corresponding star rating (1–5 stars) based on the accumulated score.
 
 ### Usage
 
